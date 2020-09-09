@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页面生命周期：DOMContentLoaded，load，beforeunload，unload</title>
+
+  <style>
+    #logo {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  
+  <img 
+    id="logo"
+    src="https://gw.alicdn.com/tfs/TB1PAiLNAT2gK0jSZFkXXcIQFXa-316-316.jpg"
+  />
+
+  <script src="./demo.js" defer></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log('页面加载状态：DOMContentLoaded');
+      // console.log(`img size: ${ logo.offsetHeight }`);
+    });
+
+    window.onload = () => {
+      console.log('页面加载状态：onload');
+    }
+
+    /*
+    
+
+    window.onbeforeunload = function() {
+      console.log('hello')
+    };
+
+    console.log('我先加载');
+    */
+
+    window.onerror = (err) => {
+      console.log(err);
+    }
+  </script>
+
+</body>
+</html>

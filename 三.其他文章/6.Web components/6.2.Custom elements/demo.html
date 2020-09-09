@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom elements</title>
+</head>
+<body>
+  <time-formatted 
+    id="time"
+    hour="numeric"
+    minute="numeric"
+    second="numeric"
+  />
+
+  <script src="./demo.js" type="module"></script>
+  <script>
+    setInterval(() => {
+      time.setAttribute('datetime', new Date());
+    }, 1000)
+  </script>
+</body>
+</html>
